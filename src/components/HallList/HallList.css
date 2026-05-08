@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+}
+
+/* CONTAINER */
+.hall-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+/* GRID */
+.hall-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* CARD */
+.hall-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.hall-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(33, 94, 248, 0.12);
+}
+
+/* BOOKED */
+.is-booked {
+  opacity: 0.6;
+  filter: grayscale(0.3);
+  pointer-events: none;
+}
+
+/* IMAGE */
+.hall-image-wrapper {
+  position: relative;
+  height: 160px;
+}
+
+.hall-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BADGE */
+.status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.available {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.booked {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* CONTENT */
+.hall-content {
+  padding: 14px;
+}
+
+.hall-info-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.hall-info-top h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.capacity {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* TAGS */
+.amenities-list {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #eef2ff;
+  color: #215EF8;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+/* BUTTON */
+.book-btn {
+  width: 100%;
+  padding: 9px;
+  border-radius: 8px;
+  border: none;
+  background: #215EF8;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.book-btn:hover {
+  background: #1d4ed8;
+}
+
+.book-btn.disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* ============================= */
+/* 🔥 BOOKINGS SECTION (UPDATED) */
+/* ============================= */
+
+.all-bookings-section {
+  margin-top: 30px;
+}
+
+/* DATE GROUP */
+.date-group {
+  margin-bottom: 20px;
+}
+
+/* DATE HEADER (THIS IS THE KEY CHANGE) */
+.date-header {
+  font-size: 13px;
+  font-weight: 700;
+  color: #215EF8;
+
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+
+  margin-bottom: 10px;
+}
+
+/* BOOKING LIST */
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* BOOKING ITEM */
+.booking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 12px;
+  border-radius: 8px;
+
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: 0.2s;
+}
+
+.booking-item:hover {
+  background: #f1f5ff;
+  border-color: #c7d2fe;
+}
+
+/* LEFT */
+.booking-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-left strong {
+  font-size: 13px;
+}
+
+.booking-left span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* RIGHT */
+.booking-right {
+  font-size: 11px;
+  color: #215EF8;
+}
+
+/* EMPTY */
+.empty-text {
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* SUCCESS / ERROR */
+.success-msg {
+  background: #ecfdf5;
+  color: #059669;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.error-msg {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+/* 🔥 CONFLICT BOX */
+.conflict-box {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.conflict-box p {
+  font-size: 12px;
+  color: #dc2626;
+  margin-bottom: 2px;
+}
+
+.conflict-box span {
+  font-size: 11px;
+  color: #7f1d1d;
+}
+
+/* 🔥 PURPOSE TAG */
+.purpose-tag {
+  margin-top: 6px;
+  display: inline-block;
+
+  font-size: 10px;
+  padding: 3px 8px;
+
+  background: #eef2ff;
+  color: #215EF8;
+
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hall-container {
+    padding: 10px 0;
+  }
+
+  .booking-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
