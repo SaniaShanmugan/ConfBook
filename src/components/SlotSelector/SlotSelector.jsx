@@ -20,7 +20,7 @@ function SlotSelector({ selectedSlot, setSelectedSlot, selectedDate }) {
     "Conference Hall C",
   ];
 
-  // 🔹 Load bookings
+  //  Load bookings
   const loadBookings = async () => {
     const data = await api(`/bookings/date/${selectedDate}`);
     if (Array.isArray(data)) {
@@ -32,7 +32,7 @@ function SlotSelector({ selectedSlot, setSelectedSlot, selectedDate }) {
     if (selectedDate) loadBookings();
   }, [selectedDate]);
 
-  // CHECK OVERLAP — backend returns clean HH:MM
+
   const isOverlapping = (slot, booking) => {
     return slot.start < booking.end_time && slot.end > booking.start_time;
   };

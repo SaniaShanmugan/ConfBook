@@ -1,12 +1,23 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+  useRef,
+} from "react";
+
 import "./AIAssistant.css";
 
 function AIAssistant() {
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] =
+    useState(false);
 
   const [message, setMessage] =
     useState("");
+
+  const [loading, setLoading] =
+    useState(false);
+
+  const bottomRef = useRef(null);
 
   // ─────────────────────────────────────────
   // LOAD CHAT HISTORY
@@ -43,14 +54,27 @@ function AIAssistant() {
   }, [messages]);
 
   // ─────────────────────────────────────────
+  // AUTO SCROLL
+  // ─────────────────────────────────────────
+  useEffect(() => {
+
+    bottomRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+
+  }, [messages]);
+
+  // ─────────────────────────────────────────
   // CLEAR ONLY ON PAGE REFRESH
   // ─────────────────────────────────────────
   useEffect(() => {
 
     const clearChat = () => {
+
       localStorage.removeItem(
         "ai_chat_history"
       );
+
     };
 
     window.addEventListener(
@@ -59,10 +83,12 @@ function AIAssistant() {
     );
 
     return () => {
+
       window.removeEventListener(
         "beforeunload",
         clearChat
       );
+
     };
 
   }, []);
@@ -72,14 +98,15 @@ function AIAssistant() {
   // ─────────────────────────────────────────
   const sendMessage = async () => {
 
-    if (!message.trim()) return;
+    if (!message.trim() || loading)
+      return;
 
     const userMsg = {
       role: "user",
       text: message,
     };
 
-    // Add user message instantly
+    // ADD USER MESSAGE
     setMessages((prev) => [
       ...prev,
       userMsg,
@@ -88,6 +115,8 @@ function AIAssistant() {
     const currentMessage = message;
 
     setMessage("");
+
+    setLoading(true);
 
     try {
 
@@ -116,7 +145,9 @@ function AIAssistant() {
         ...prev,
         {
           role: "ai",
-          text: data.reply,
+          text:
+            data.reply ||
+            "No response from AI.",
         },
       ]);
 
@@ -130,13 +161,18 @@ function AIAssistant() {
             "AI unavailable right now.",
         },
       ]);
+
+    } finally {
+
+      setLoading(false);
+
     }
   };
 
   return (
     <>
 
-      {/* Floating Button */}
+      {/* FLOATING BUTTON */}
       <button
         className="ai-float-btn"
         onClick={() =>
@@ -146,17 +182,17 @@ function AIAssistant() {
         ✨
       </button>
 
-      {/* Chat Box */}
+      {/* CHAT BOX */}
       {open && (
 
         <div className="ai-chatbox">
 
-          {/* Header */}
+          {/* HEADER */}
           <div className="ai-header">
             AI Assistant
           </div>
 
-          {/* Messages */}
+          {/* MESSAGES */}
           <div className="ai-messages">
 
             {messages.map((msg, i) => (
@@ -170,15 +206,19 @@ function AIAssistant() {
 
             ))}
 
+            {/* AUTO SCROLL TARGET */}
+            <div ref={bottomRef}></div>
+
           </div>
 
-          {/* Input Area */}
+          {/* INPUT AREA */}
           <div className="ai-input-area">
 
             <input
               type="text"
               placeholder="Ask something..."
               value={message}
+              disabled={loading}
               onChange={(e) =>
                 setMessage(e.target.value)
               }
@@ -193,8 +233,11 @@ function AIAssistant() {
 
             <button
               onClick={sendMessage}
+              disabled={loading}
             >
-              Send
+              {loading
+                ? "..."
+                : "Send"}
             </button>
 
           </div>

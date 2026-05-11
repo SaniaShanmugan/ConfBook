@@ -23,7 +23,7 @@ const PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
         title,
         message,
         hall,
-        date:    formatDateDisplay(date), // ✅ now works
+        date:    formatDateDisplay(date), 
         time,
         purpose: purpose || "—",
       },

@@ -133,7 +133,7 @@
 }
 
 /* ============================= */
-/* 🔥 BOOKINGS SECTION (UPDATED) */
+/* BOOKINGS SECTION */
 /* ============================= */
 
 .all-bookings-section {
@@ -233,7 +233,7 @@
   font-size: 12px;
 }
 
-/* 🔥 CONFLICT BOX */
+
 .conflict-box {
   background: #fef2f2;
   border: 1px solid #fecaca;
@@ -253,7 +253,7 @@
   color: #7f1d1d;
 }
 
-/* 🔥 PURPOSE TAG */
+
 .purpose-tag {
   margin-top: 6px;
   display: inline-block;
@@ -268,7 +268,7 @@
   font-weight: 600;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .hall-container {
     padding: 10px 0;

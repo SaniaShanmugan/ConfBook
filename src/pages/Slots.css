@@ -1,6 +1,4 @@
-/* ========================= */
-/* SLOTS PAGE (SAFE SCOPED) */
-/* ========================= */
+
 
 .slots-page {
   background: #f6f8fc;
@@ -9,9 +7,6 @@
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* ========================= */
-/* CARD */
-/* ========================= */
 
 .slots-page .slots-card {
   max-width: 1000px;
@@ -24,9 +19,7 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* ========================= */
-/* HEADER */
-/* ========================= */
+
 
 .slots-page .top-section {
   display: flex;
@@ -47,9 +40,6 @@
   margin-top: 4px;
 }
 
-/* ========================= */
-/* BADGE */
-/* ========================= */
 
 .slots-page .time-badge {
   background: #eef2ff;
@@ -77,9 +67,7 @@
   margin-top: 2px;
 }
 
-/* ========================= */
-/* GRID */
-/* ========================= */
+
 
 .slots-page .time-grid {
   display: grid;
@@ -88,9 +76,7 @@
   margin-top: 28px;
 }
 
-/* ========================= */
-/* TIME BOX */
-/* ========================= */
+
 
 .slots-page .time-box {
   background: #f9fbff;
@@ -115,9 +101,6 @@
   margin-bottom: 8px;
 }
 
-/* ========================= */
-/* SELECT GROUP */
-/* ========================= */
 
 .slots-page .time-select {
   display: flex;
@@ -166,9 +149,7 @@
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
 }
 
-/* ========================= */
-/* ERROR */
-/* ========================= */
+
 
 .slots-page .error {
   color: #dc2626;
@@ -176,9 +157,7 @@
   margin-top: 12px;
 }
 
-/* ========================= */
-/* EMPTY */
-/* ========================= */
+
 
 .slots-page .empty {
   text-align: center;
@@ -194,9 +173,6 @@
   background: #fafbff;
 }
 
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
 
 @media (max-width: 768px) {
   .slots-page {

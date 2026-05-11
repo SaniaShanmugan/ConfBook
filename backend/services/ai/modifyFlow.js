@@ -70,22 +70,22 @@ return res.json({
   reply:
 `Booking Modified!
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 OLD BOOKING (cancelled)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 Hall       : ${oldData.hall}
 Date       : ${oldData.date}
 Time       : ${oldData.start_time} – ${oldData.end_time}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 NEW BOOKING (confirmed)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 Hall       : ${newData.hall}
 Date       : ${newData.date}
 Time       : ${newData.start_time} – ${newData.end_time}
 Purpose    : ${newData.purpose || oldData.purpose}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 Your booking has been updated!`,
 });
@@ -174,11 +174,11 @@ Please check your details and try again.`,
       reply:
 `✅ Booking found!
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
  Hall     :  ${old.hall}
  Date     :  ${old.date}
  Time     :  ${old.start_time} – ${old.end_time}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 Now tell me the new date or time you'd like.
 For example:
@@ -249,22 +249,22 @@ return res.json({
   reply:
 `Modify Confirmation
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 OLD BOOKING
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 Hall       : ${oldBooking.hall}
 Date       : ${oldBooking.date}
 Time       : ${oldBooking.start_time} – ${oldBooking.end_time}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 NEW BOOKING
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 Hall       : ${newBooking.hall}
 Date       : ${newBooking.date}
 Time       : ${newBooking.start_time} – ${newBooking.end_time}
 Purpose    : ${newBooking.purpose}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 
 Reply YES to confirm
 Reply NO to cancel`,

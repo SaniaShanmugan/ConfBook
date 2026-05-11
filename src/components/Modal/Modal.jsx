@@ -15,10 +15,9 @@ function Modal({ open, onClose, onConfirm, data = {} }) {
 
     setError("");
     onConfirm(purpose); 
-    setPurpose("");     // reset after confirm
+    setPurpose("");   
   };
 
-  // DATE FORMAT → 24 Apr 2026
     const formatDate = (dateStr) => {
       if (!dateStr) return "";
       const [y, m, d] = dateStr.split("-");
@@ -61,7 +60,7 @@ function Modal({ open, onClose, onConfirm, data = {} }) {
 
         </div>
 
-        {/* 🔥 PURPOSE INPUT */}
+        {/* PURPOSE INPUT */}
         <div className="purpose-section">
           <label>Purpose</label>
           <input

@@ -66,12 +66,12 @@ function HallList({ selectedDate, startTime, endTime }) {
     setModalOpen(true);
   };
 
-  // 🔹 Normalize date
+  //  Normalize date
  const getSafeDate = (dateStr) => {
   return dateStr;
 };
 
-  // 🔥 Confirm booking
+  //  Confirm booking
   const confirmBooking = async (purpose) => {
     setMessage("");
     setErrorMsg("");
@@ -87,8 +87,8 @@ function HallList({ selectedDate, startTime, endTime }) {
     const data = await api("/bookings", "POST", {
       hall: selectedHall,
       date: safeDate,
-      start_time: to24Hour(startTime),  // ✅ FIX
-      end_time: to24Hour(endTime),      // ✅ FIX
+      start_time: to24Hour(startTime),  
+      end_time: to24Hour(endTime),      
       purpose: purpose || "",
     });
 
@@ -104,7 +104,7 @@ function HallList({ selectedDate, startTime, endTime }) {
     setModalOpen(false);
   };
 
-  // 🔹 Overlap logic
+
   const isOverlapping = (start1, end1, start2, end2) => {
     return start1 < end2 && end1 > start2;
   };

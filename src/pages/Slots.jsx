@@ -18,7 +18,7 @@ function Slots() {
     });
   };
 
-  // 🔥 Convert to 24h for backend
+ 
   const to24 = ({ hour, min, period }) => {
     if (!hour) return "";
     let h = parseInt(hour);

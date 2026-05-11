@@ -16,16 +16,14 @@ function Calendar() {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDay    = new Date(year, month, 1).getDay();
 
-  // ✅ FIXED: local date instead of toISOString (no timezone bug)
   const today = new Date();
   const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
 
-  // ✅ FIXED: no cache + no conversion
   const loadBookedDates = async () => {
-    const data = await api(`/bookings/dates?ts=${Date.now()}`); // 🔥 prevent cache
+    const data = await api(`/bookings/dates?ts=${Date.now()}`); // prevent cache
 
     if (Array.isArray(data)) {
-      setBookedDates(data); // use directly
+      setBookedDates(data); 
     } else {
       setBookedDates([]);
     }
