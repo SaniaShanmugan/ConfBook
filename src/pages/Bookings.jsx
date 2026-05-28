@@ -227,8 +227,8 @@ useEffect(() => {
   if (loading) return <p className="loading">Loading...</p>;
 
   return (
-    <div className="page">
-      <div className="container">
+    <div className="page dashboard-bookings-page">
+  <div className="container dashboard-bookings-container">
 
         <NotificationAlert
           alertData={alertData}

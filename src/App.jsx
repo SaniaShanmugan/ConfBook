@@ -60,7 +60,40 @@ function AppContent() {
             path="/"
             element={
               <ProtectedRoute user={user} loading={loading}>
-                <Calendar />
+
+                <div style={{
+                  display: "flex",
+                  flexWrap: "nowrap",
+                  gap: "24px",
+                  padding: "24px",
+                  alignItems: "stretch",
+                  width: "100%",
+                  boxSizing: "border-box",
+                  minWidth: 0
+                }}>
+
+                  {/* LEFT SIDE - Bookings */}
+                  <div style={{
+                    flex: "1 1 400px",
+                    minWidth: 0,
+                    display: "flex",
+                    flexDirection: "column"
+                  }}>
+                    <Bookings />
+                  </div>
+
+                  {/* RIGHT SIDE - Calendar */}
+                  <div style={{
+                    width: "340px",
+                    flex: "0 0 340px",
+                    position: "sticky",
+                    top: "90px"
+                  }}>
+                    <Calendar />
+                  </div>
+
+                </div>
+
               </ProtectedRoute>
             }
           />

@@ -1,6 +1,7 @@
 /* RESET */
-html, body, #root {
-  height: 100%;
+html,
+body,
+#root {
   margin: 0;
   font-family: "Inter", sans-serif;
   background: #f8fafc;
@@ -8,47 +9,86 @@ html, body, #root {
 
 /* APP LAYOUT */
 .app-layout {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  background: #f8fafc;
 }
 
 /* MAIN CONTENT */
 .app-main {
-  flex: 1;
-  padding-top: 70px; 
-  display: flex;
-  flex-direction: column;
+  padding-top: 80px;
 }
 
+/* DASHBOARD LAYOUT */
+.dashboard-layout {
+  display: grid;
 
+  grid-template-columns: 1fr 340px;
+
+  gap: 24px;
+
+  align-items: start;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 24px;
+}
+
+/* LEFT SIDE */
+.dashboard-bookings {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* RIGHT SIDE */
+.dashboard-calendar {
+  width: 340px;
+  min-width: 0;
+  position: sticky;
+  top: 90px;
+}
+
+/* MAIN CONTENT WRAPPER */
 .main-content {
   width: 100%;
+
   max-width: 1000px;
+
   margin: 0 auto;
+
   padding: 20px;
 }
 
 /* LOADER */
 .app-loader {
   height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 14px;
-  color: #215EF8;
   font-weight: 600;
+
+  color: #215ef8;
 }
 
 /* GLOBAL BUTTONS */
 .btn-primary {
   padding: 10px 18px;
-  background: #215EF8;
+
+  background: #215ef8;
   color: white;
+
   border: none;
   border-radius: 8px;
+
   font-weight: 600;
+
   cursor: pointer;
+
   transition: 0.2s;
 }
 
@@ -58,10 +98,13 @@ html, body, #root {
 
 .btn-secondary {
   padding: 10px 18px;
+
   background: white;
+  color: #215ef8;
+
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  color: #215EF8;
+
   cursor: pointer;
 }
 
@@ -75,33 +118,62 @@ html, body, #root {
 }
 
 .form-group label {
+  display: block;
+
+  margin-bottom: 4px;
+
   font-size: 11px;
   font-weight: 600;
+
   color: #64748b;
-  margin-bottom: 4px;
-  display: block;
 }
 
 .form-group input {
   width: 100%;
+
   padding: 10px;
+
   border-radius: 8px;
   border: 1px solid #e2e8f0;
+
   font-size: 13px;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #215EF8;
+
+  border-color: #215ef8;
+
   box-shadow: 0 0 0 2px rgba(33, 94, 248, 0.1);
 }
 
 /* ERROR */
 .error-msg {
-  font-size: 12px;
-  color: #dc2626;
-  background: #fef2f2;
-  padding: 8px;
-  border-radius: 6px;
   margin-bottom: 10px;
+
+  padding: 8px;
+
+  background: #fef2f2;
+  color: #dc2626;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .app-main {
+    padding-top: 70px;
+  }
+
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .dashboard-calendar {
+    width: 100%;
+    position: static;
+  }
 }

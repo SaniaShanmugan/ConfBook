@@ -33,14 +33,6 @@ function Navbar({ user, setUser }) {
         <div className="nav-left" onClick={() => navigate("/")}>
           <h1 className="logo-text">ConfBook</h1>
         </div>
-        <nav className="nav-menu">
-          <NavLink to="/" className={({ isActive }) => isActive ? "nav-tab active" : "nav-tab"}>
-            Calendar
-          </NavLink>
-          <NavLink to="/bookings" className={({ isActive }) => isActive ? "nav-tab active" : "nav-tab"}>
-            Bookings
-          </NavLink>
-        </nav>
         <div className="nav-user-section" ref={dropdownRef}>
           <div className="user-avatar" onClick={() => setShowDropdown((prev) => !prev)}>
             {initials}

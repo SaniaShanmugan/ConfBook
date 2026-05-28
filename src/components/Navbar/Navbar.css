@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
 
-  background: #215EF8; /* FULL SOLID COLOR */
+  background: #215EF8; 
   border-bottom: none;
 
   box-shadow: 0 6px 20px rgba(33, 94, 248, 0.35);
@@ -150,7 +150,6 @@
 .dropdown-btn:hover {
   background: #fef2f2;
 }
-
 /* TABLET */
 @media (max-width: 1024px) {
   .logo-text {
@@ -166,23 +165,23 @@
 /* MOBILE */
 @media (max-width: 768px) {
   .app-navbar {
-    height: auto;
-    padding: 10px 0;
+    height: 50px;        
+    padding: 0;        
   }
 
   .nav-content {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 0;
   }
 
   .nav-menu {
-    width: 100%;
+    width: auto;
     justify-content: center;
     flex-wrap: wrap;
   }
 
   .nav-tab {
-    flex: 1;
+    flex: none;           
     text-align: center;
   }
 }
